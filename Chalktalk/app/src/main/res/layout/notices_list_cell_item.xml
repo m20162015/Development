@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardElevation="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:id="@+id/notif_imageView_list"
+                    android:layout_height="60dp"
+                    android:layout_width="60dp"
+                    android:src="@drawable/noticies_individual">
+                </ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/notif_heading_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Description of Title Heading Description of Title Heading"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:maxLines="2"/>
+                <TextView
+                    android:id="@+id/notif_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="29th sept 2016"
+                    android:textColor="#151515"
+                    android:textSize="12sp"
+                    android:paddingLeft="5dp"/>
+
+                <!--<TextView-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:id="@+id/notif_desc"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:text="29th sept 2016 29th sept 2016 29th sept 2016 29th sept 2016"-->
+                    <!--android:textColor="#151515"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:maxLines="2"/>-->
+
+                <com.ms.square.android.expandabletextview.ExpandableTextView
+                    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/expand_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    expandableTextView:maxCollapsedLines="1">
+
+                    <TextView
+                        android:id="@id/expandable_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="16sp"
+                        android:textColor="#666666" />
+
+                    <ImageButton
+                        android:id="@id/expand_collapse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:layout_gravity="right|top"
+                        android:background="@android:color/transparent"/>
+                </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

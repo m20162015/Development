@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="DASHBOARD" />
+        <item
+            android:id="@+id/nav_attendance"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="ATTENDANCE" />
+        <item
+            android:id="@+id/nav_timetable"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="TIME TABLE" />
+        <item
+            android:id="@+id/nav_homework"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="HOME WORK" />
+        <item
+            android:id="@+id/nav_notice"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="NOTICE" />
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="EVENTS" />
+        <item
+            android:id="@+id/nav_foodtime"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="FOOD TIME" />
+        <item
+            android:id="@+id/nav_projects"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="PROJECTS" />
+        <item
+            android:id="@+id/nav_media_gallery"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="MEDIA GALLERY" />
+        <item
+            android:id="@+id/nav_exam_timetable"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="EXAM TIME TABLE" />
+        <item
+            android:id="@+id/nav_result"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="RESULT" />
+        <item
+            android:id="@+id/nav_fees"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="FEES" />
+        <item
+            android:id="@+id/nav_abt_us"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="ABOUT US" />
+        <item
+            android:id="@+id/nav_my_kids"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="MY KIDS" />
+        <item
+            android:id="@+id/nav_myprofile"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="MY PROFILE" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="LOGOUT" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
