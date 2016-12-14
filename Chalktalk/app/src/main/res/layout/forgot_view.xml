@@ -51,7 +51,8 @@
         android:layout_height="0dp"
         android:layout_weight="60"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:padding="20dp">
 
         <EditText
             android:layout_width="match_parent"

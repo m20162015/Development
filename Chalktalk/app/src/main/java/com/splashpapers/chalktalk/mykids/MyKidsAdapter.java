@@ -1,6 +1,7 @@
 package com.splashpapers.chalktalk.mykids;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,7 @@ public class MyKidsAdapter  extends ArrayAdapter<MyKidsVO> {
         // update the item view
         MyKidsVO item = getItem(position);
         viewHolder.title.setText(item.getName());
-
+        Log.d("image","imageurl"+item.getImageURL());
         Glide.with(getContext()).load(item.getImageURL()).error(R.drawable.profile).placeholder(R.drawable.profile).into(viewHolder.image);
         return convertView;
     }

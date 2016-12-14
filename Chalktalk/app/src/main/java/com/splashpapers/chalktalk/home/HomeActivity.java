@@ -30,6 +30,7 @@ import com.splashpapers.chalktalk.mediagallery.MediaGalleryActivity;
 import com.splashpapers.chalktalk.mykids.MyKidsActivity;
 import com.splashpapers.chalktalk.myprofile.MyProfileActivity;
 import com.splashpapers.chalktalk.notices.NoticesActivity;
+import com.splashpapers.chalktalk.notification.NotificationActivity;
 import com.splashpapers.chalktalk.projects.ProjectsActivity;
 import com.splashpapers.chalktalk.results.ResultsActivity;
 import com.splashpapers.chalktalk.timetable.TimeTableActivity;
@@ -89,7 +90,8 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_notification) {
-
+            Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
+            this.startActivity(intent);
             return true;
         }
 

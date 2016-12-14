@@ -70,7 +70,7 @@ public class TimeTableFragmentWednesday extends Fragment {
             childrenJSONArray = childrenJSONObject.getJSONArray("children");
             selectedChildJSONObject = childrenJSONArray.getJSONObject(0);
             classId = selectedChildJSONObject.getString("class_id");
-            classId = "1";
+//            classId = "1";
         } catch (JSONException e) {
             e.printStackTrace();
         }

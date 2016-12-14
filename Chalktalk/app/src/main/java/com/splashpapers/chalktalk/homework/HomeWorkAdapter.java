@@ -18,7 +18,7 @@ import java.util.List;
 public class HomeWorkAdapter  extends ArrayAdapter<HomeWorkVO> {
 
     public HomeWorkAdapter(Context context, List<HomeWorkVO> items) {
-        super(context, R.layout.notification_list_cell_item, items);
+        super(context, R.layout.home_list_cell_item, items);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class HomeWorkAdapter  extends ArrayAdapter<HomeWorkVO> {
 
         if (v == null) {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.notification_list_cell_item,parent, false);
+            v = inflater.inflate(R.layout.home_list_cell_item,parent, false);
         }
 
         TextView mNewsTitleListTextView = (TextView) v.findViewById(R.id.notif_heading_list);

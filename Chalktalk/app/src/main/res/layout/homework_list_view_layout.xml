@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="#f6b111"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/image_period"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/period_bg"
+                android:textSize="19sp"
+                android:textColor="#ffffff"
+                android:text="@string/projects"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#f6b111">
+            <Spinner
+                android:layout_marginLeft="13dp"
+                android:id="@+id/spinner_month"
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="match_parent"
+                android:prompt="@string/spinner_month"
+
+                ></Spinner>
+
+            <Spinner
+                android:layout_marginLeft="13dp"
+                android:id="@+id/spinner_status"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:prompt="@string/spinner_status"
+                ></Spinner>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5f5f5">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/task_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ListView
+                android:id="@+id/task_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#00000000"
+                android:paddingBottom="15dp"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/task_list_empty"
+            android:text="@string/notif_empty_list"
+            android:padding="15dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="#000"
+
+            />
+
+    </FrameLayout>
+
+</LinearLayout>

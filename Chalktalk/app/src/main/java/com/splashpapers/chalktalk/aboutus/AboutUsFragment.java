@@ -64,7 +64,7 @@ public class AboutUsFragment extends Fragment {
                 Log.d("Exception","ex2 ");
                 aboutUsWebView.loadData(data.getAboutUsText(), "text/html; charset=UTF-8", null);
                 Log.d("Exception","ex3 ");
-                Glide.with(context).load(data.getImageURL().toString()).placeholder(R.drawable.chalk_talk).error(R.drawable.chalk_talk).into(image);
+                Glide.with(context).load(data.getImageURL().toString()).placeholder(R.drawable.chalk_talk_icon).error(R.drawable.chalk_talk_icon).into(image);
                 Log.d("Exception","ex4 ");
 //            }
         }

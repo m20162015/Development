@@ -6,9 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.splashpapers.chalktalk.R;
 import com.splashpapers.chalktalk.notices.model.NoticesVO;
 
@@ -36,16 +34,16 @@ public class NoticesAdapter extends ArrayAdapter<NoticesVO> {
 
         TextView mNewsTitleListTextView = (TextView) v.findViewById(R.id.notif_heading_list);
         TextView mNewsDateListTextView = (TextView) v.findViewById(R.id.notif_date);
-//        TextView mNewsDetailListTextView = (TextView) v.findViewById(R.id.notif_desc);
+        TextView mNewsDetailListTextView = (TextView) v.findViewById(R.id.notif_desc);
 
-        ExpandableTextView expTv1 = (ExpandableTextView) v.findViewById(R.id.expand_text_view);
-
-        expTv1.setOnExpandStateChangeListener(new ExpandableTextView.OnExpandStateChangeListener() {
-            @Override
-            public void onExpandStateChanged(TextView textView, boolean isExpanded) {
-                Toast.makeText(context, isExpanded ? "Expanded" : "Collapsed", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        ExpandableTextView expTv1 = (ExpandableTextView) v.findViewById(R.id.expand_text_view);
+//
+//        expTv1.setOnExpandStateChangeListener(new ExpandableTextView.OnExpandStateChangeListener() {
+//            @Override
+//            public void onExpandStateChanged(TextView textView, boolean isExpanded) {
+//                Toast.makeText(context, isExpanded ? "Expanded" : "Collapsed", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
         NoticesVO news = getItem(position);
@@ -53,8 +51,8 @@ public class NoticesAdapter extends ArrayAdapter<NoticesVO> {
 //        Picasso.with(getContext()).load(news.getImg()).error(R.drawable.profile_logo).placeholder(R.drawable.profile_logo).into(mNewsImgView);
         mNewsTitleListTextView.setText(news.getTitle());
         mNewsDateListTextView.setText(news.getDate());
-//        mNewsDetailListTextView.setText(news.getDesc());
-        expTv1.setText(news.getDesc());
+        mNewsDetailListTextView.setText(news.getDesc());
+//        expTv1.setText(news.getDesc());
         return v;
     }
 

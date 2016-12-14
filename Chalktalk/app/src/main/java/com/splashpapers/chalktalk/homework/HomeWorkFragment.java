@@ -5,9 +5,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,7 +28,7 @@ import java.util.List;
 /**
  * Created by manishsharma on 11/23/16.
  */
-public class HomeWorkFragment extends Fragment {
+public class HomeWorkFragment extends Fragment{
 
     static HomeWorkAdapter mAdapter;
     List<HomeWorkVO> mItems;
@@ -35,7 +37,7 @@ public class HomeWorkFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.notification_list_view_layout, container, false);
+        View view = inflater.inflate(R.layout.homework_list_view_layout, container, false);
 
         mEmptyList = (TextView) view.findViewById(R.id.task_list_empty);
 
@@ -44,6 +46,26 @@ public class HomeWorkFragment extends Fragment {
 
         ListView listView = (ListView) view.findViewById(R.id.task_list);
         listView.setAdapter(mAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("nvdks","vkds");
+//                FragmentManager fm=getActivity().getSupportFragmentManager();
+//                FragmentTransaction ft=fm.beginTransaction();
+//
+//                Log.d("nvdks","vkds");
+//                HomeWorkVO homeWorkVO = HomeWorkModel.getInstance().getHomeWorkList("news").get(position);
+//
+//                HomeWorkDetailFragment homeWorkDetailFragment=new HomeWorkDetailFragment();
+//
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("HomeWorkVO",homeWorkVO);
+//                homeWorkDetailFragment.setArguments(bundle);
+//                ft.add(R.id.main_container,homeWorkDetailFragment);
+//                ft.commit();
+//                fm.executePendingTransactions();
+            }
+        });
         callRequest();
 
         return view;
@@ -95,4 +117,5 @@ public class HomeWorkFragment extends Fragment {
         // Update the visibility of empty message
         setVisibilityEmptyList(mEmptyList, HomeWorkModel.getInstance().getHomeWorkList("news").size());
     }
+
 }

@@ -1,14 +1,17 @@
 package com.splashpapers.chalktalk.myprofile.model;
 
+import java.io.Serializable;
+
 /**
  * Created by manishsharma on 11/30/16.
  */
-public class MyProfileVO {
+public class MyProfileVO implements Serializable{
 
     private String name;
     private String email;
     private String phone;
     private String imageURL;
+    private String address;
 
     public String getName() {
         return name;
@@ -40,5 +43,13 @@ public class MyProfileVO {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

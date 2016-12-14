@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#F3B21B</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#c48f0f</color>
     <color name="loginBgColor">#F3B21B</color>
     <color name="goodToSeeYouColor">#0D4E9E</color>
 </resources>

@@ -2,6 +2,7 @@ package com.splashpapers.chalktalk.aboutus;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -51,8 +52,8 @@ public class AboutUsRequest {
             this.dialog.setMessage(this.getContext().getString(R.string.loading));
             this.dialog.show();
 
-
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL+ "mobile1/"+ funcName,new Response.Listener<String>() {
+            SharedPreferences user = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, user.getString(Constants.BASE_URL_LOGIN,"")+ "mobile1/"+ funcName,new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     dialog.dismiss();

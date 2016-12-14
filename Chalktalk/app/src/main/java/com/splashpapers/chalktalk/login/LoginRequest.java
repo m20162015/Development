@@ -108,6 +108,7 @@ public class LoginRequest {
                                     edit.putString(Constants.LOGIN_TYPE, JsonParser.getString(loginResponse, Constants.LOGIN_TYPE, ""));
                                     edit.putString(Constants.LOGIN_USER_ID, JsonParser.getString(loginResponse, Constants.LOGIN_USER_ID, ""));
                                     edit.putString(Constants.INSTITUTE_NAME, JsonParser.getString(loginResponse.getJSONObject("0"), Constants.INSTITUTE_NAME, ""));
+                                    edit.putString(Constants.BASE_URL_LOGIN, JsonParser.getString(loginResponse.getJSONObject("0"), Constants.BASE_URL_LOGIN, ""));
                                     edit.commit();
 
                                     // Launch Home Dashboard Activity

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chalktalk</string>
+    <string name="app_name">Chalk Talk</string>
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -141,10 +141,30 @@
         <item>Absent</item>
     </string-array>
 
-    <string name="period_prompt">Select Period</string>
     <string name="notif_empty_list">Empty</string>
-    <string name="notif_tab1">NOTIFICATIONS</string>
-    <string name="notif_tab2">SET ALARMS</string>
+    <string name="notif_tab1">VIEW NOTIFICATIONS</string>
+    <string name="notif_tab2">SET ALERT</string>
+
+    <string name="period_prompt">Select Period</string>
+    <string name="profile_heading">ACCOUNT PREFERENCE</string>
+    <string name="profile_notification">Notification Settings</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_mobileNumber">Mobile No</string>
+    <string name="profile_emailID">EmailID</string>
+    <string name="profile_addressTxt">Address</string>
+    <string name="profile_changePassword">CHANGE PASSWORD</string>
+    <string name="profile_bottom_text">MY KIDS</string>
+    <string name="profile_className">Class</string>
+    <string name="profile_division">Division</string>
+    <string name="profile_rollNo">RollNo</string>
+    <string name="profile_grNo">GR No</string>
+    <string name="attendance_reasonForAbsence">REASON FOR ABSENCE</string>
+    <string name="attendance_name">Name</string>
+    <string name="attendance_period">Period</string>
+    <string name="attendance_reason">Reason for Absence</string>
+    <string name="submit">SUBMIT</string>
+    <string name="attendance_reasonForLeave">REASON FOR LEAVE</string>
+    <string name="submission">SUBMISSION :</string>
 
     <string-array name="student_period_array">
         <item>Today</item>

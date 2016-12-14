@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.splashpapers.chalktalk.R;
@@ -35,6 +36,7 @@ public class TimeTableAdapter extends ArrayAdapter<TimeTableVO> {
         TextView mNewsTitleListTextView = (TextView) v.findViewById(R.id.timetable_subject);
         TextView mNewsDateListTextView = (TextView) v.findViewById(R.id.timetable_name);
         TextView mNewsDetailListTextView = (TextView) v.findViewById(R.id.timetable_time);
+        ImageView mTimeTableTime = (ImageView) v.findViewById(R.id.timetable_image);
         CardView cardView = (CardView) v.findViewById(R.id.card_view);
 
         TimeTableVO news = getItem(position);
@@ -43,6 +45,12 @@ public class TimeTableAdapter extends ArrayAdapter<TimeTableVO> {
         mNewsTitleListTextView.setText(news.getSubjet());
         mNewsDateListTextView.setText(news.getName());
         mNewsDetailListTextView.setText(news.getTime());
+
+        if(news.getTime().equals("9"))mTimeTableTime.setImageResource(R.drawable.time_9);
+        else if(news.getTime().equals("10"))mTimeTableTime.setImageResource(R.drawable.time_10);
+        else if(news.getTime().equals("11"))mTimeTableTime.setImageResource(R.drawable.time_11);
+        else if(news.getTime().equals("12"))mTimeTableTime.setImageResource(R.drawable.time_12);
+
 
         if(position%2==0)cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
         else cardView.setCardBackgroundColor(Color.parseColor("#F2F1F1"));

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class NotificationAdapter extends ArrayAdapter<NotificationVO> {
     public NotificationAdapter(Context context, List<NotificationVO> items) {
-        super(context, R.layout.notification_list_cell_item, items);
+        super(context, R.layout.notif_list_cell_item, items);
     }
 
     @Override
@@ -28,12 +28,12 @@ public class NotificationAdapter extends ArrayAdapter<NotificationVO> {
 
         if(convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.notification_list_cell_item, parent, false);
+            convertView = inflater.inflate(R.layout.notif_list_cell_item, parent, false);
 
             viewHolder = new ViewHolder();
             viewHolder.date = (TextView) convertView.findViewById(R.id.notif_date);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.notif_imageView_list);
-            viewHolder.heading = (TextView) convertView.findViewById(R.id.notif_heading_list);
+            viewHolder.heading = (TextView) convertView.findViewById(R.id.notif_desc);
 
             convertView.setTag(viewHolder);
         } else {

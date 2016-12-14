@@ -8,6 +8,7 @@ import android.content.Context;
 public class Constants {
 
     public static final String BASE_URL = "http://eguardian.in/viraldemo/eguardian/index.php?";
+    public static final String BASE_URL_LOGIN = "baseurl";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String OK = "success";

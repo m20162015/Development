@@ -6,7 +6,7 @@ package com.splashpapers.chalktalk.notification;
 
 public class NotificationConstants {
 
-    public static final String ACTUAL="notif";
-    public static final String PAST="alarm";
+    public static final String NOTIFICATION_FUNCTION_NAME = "get_notificationlist";
+    public static final String STUDENT_ID = "student_id";
 
 }

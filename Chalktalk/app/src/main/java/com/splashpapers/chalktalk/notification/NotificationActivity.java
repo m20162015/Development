@@ -2,28 +2,29 @@ package com.splashpapers.chalktalk.notification;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 
 import com.splashpapers.chalktalk.R;
 
 
-
 /**
  * Created by my pc on 16-Nov-16.
  */
 
-public class NotificationActivity  extends ActionBarActivity  implements ActionBar.TabListener{
+public class NotificationActivity  extends ActionBarActivity{
     ActionBar mActionBar;
     public static Context context;
-    private NotificationListFragment notificationViewList;
-    private NotificationSetAlertFragment notificationSetAlertList;
+    private ViewPager mViewPager;
+    private TabLayout mTabLayout;
+
+    public NotificationPageAdapter mNotificationPageAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.notification_activity);
 
       /*  TabHost tabHost = (TabHost)findViewById(R.id.notif_tabhost);
 
@@ -39,61 +40,26 @@ public class NotificationActivity  extends ActionBarActivity  implements ActionB
         tabHost.addTab(tab1);
         tabHost.addTab(tab2); */
 
-        notificationViewList= new NotificationListFragment();
-        notificationSetAlertList=new NotificationSetAlertFragment();
-
 
         mActionBar = getSupportActionBar();
-        mActionBar.setTitle("NOTIFICATION");
-        mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        ActionBar.Tab tab1 = mActionBar.newTab().setText(getString(R.string.notif_tab1))
-                .setTag(NotificationConstants.ACTUAL).setTabListener(this);
-        ActionBar.Tab tab2 = mActionBar.newTab().setText(getString(R.string.notif_tab2))
-                .setTag(NotificationConstants.PAST).setTabListener(this);
-
-        mActionBar.addTab(tab1);
-        mActionBar.addTab(tab2);
+//        mActionBar.setTitle("NOTIFICATION");
 
         context = this;
 
-        FragmentManager fm = this.getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
+        mNotificationPageAdapter = new NotificationPageAdapter(getSupportFragmentManager());
 
-        Bundle extras = getIntent().getExtras();
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mNotificationPageAdapter);
 
-        NotificationListFragment taskList = new NotificationListFragment();
-        taskList.setArguments(extras);
-
-        ft.add(R.id.main_container,taskList);
-        ft.commit();
-        fm.executePendingTransactions();
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        setupTabLayout(mTabLayout);
 
     }
 
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-
-        if (notificationViewList != null) {
-            FragmentManager fm = this.getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            if (tab.getTag().equals(NotificationConstants.ACTUAL)) {
-                ft.replace(R.id.main_container, notificationViewList);
-                ft.commit();
-            } else {
-                ft.replace(R.id.main_container, notificationSetAlertList);
-                ft.commit();
-            }
-        }
-    }
-
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
-    }
-
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
+    private void setupTabLayout(TabLayout tabLayout) {
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setupWithViewPager(mViewPager);
     }
 }

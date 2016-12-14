@@ -2,6 +2,7 @@ package com.splashpapers.chalktalk.notices;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -54,8 +55,9 @@ public class NoticesRequest {
                 this.dialog.setMessage(this.getContext().getString(R.string.loading));
                 this.dialog.show();
 
+                SharedPreferences user = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL+ "mobile1/"+ funcName,new Response.Listener<String>() {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, user.getString(Constants.BASE_URL_LOGIN,"")+ "mobile1/"+ funcName,new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         dialog.dismiss();
